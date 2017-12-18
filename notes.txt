@@ -1,0 +1,17 @@
+Notes
+======
+Currently our application flows down Router => App => AuthetnicationHOC(Resrouces)
+
+We need to programatically get Router to navigate the user if isLoggedIn = True/False.
+We use 'context' to get a reference.
+
+Props go from parent to child passed down.
+Context allows you to reach any compoent. So for example our Resrouces can directly access Router.
+
+We need to define our context types we have to setup the type:
+
+static contextTypes = {
+    router: React.PropTypes.object
+}
+
+We could now do something like this.context.router.push('/'); within that component so we have access to all the router methods.
